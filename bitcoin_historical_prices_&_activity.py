@@ -212,6 +212,13 @@ plt.show()
 
 """Model Evaluation"""
 
+train_predictions = model.predict(X_train)
+test_predictions = model.predict(X_test)
+
+# Assuming your model has been trained and is named 'model'
+train_predictions = model.predict(X_train)
+test_predictions = model.predict(X_test)
+
 # Evaluate the model
 train_score = model.evaluate(X_train, y_train, verbose=0)
 test_score = model.evaluate(X_test, y_test, verbose=0)
@@ -223,18 +230,34 @@ print("Test Loss:", test_score)
 plt.figure(figsize=(12, 6))
 
 # Plot training data
-plt.plot(np.arange(len(y_train_inv)), y_train_inv, label='Actual Train', color='blue')
+plt.plot(np.arange(len(y_train)), y_train, label='Actual Train', color='blue')
 plt.plot(np.arange(len(train_predictions)), train_predictions, label='Predicted Train', linestyle='dashed', color='orange')
 
 # Plot testing data
-plt.plot(np.arange(len(y_train_inv), len(y_train_inv) + len(y_test_inv)), y_test_inv, label='Actual Test', color='green')
-plt.plot(np.arange(len(y_train_inv), len(y_train_inv) + len(test_predictions)), test_predictions, label='Predicted Test', linestyle='dashed', color='red')
+plt.plot(np.arange(len(y_train), len(y_train) + len(y_test)), y_test, label='Actual Test', color='green')
+plt.plot(np.arange(len(y_train), len(y_train) + len(test_predictions)), test_predictions, label='Predicted Test', linestyle='dashed', color='red')
 
 plt.title('Bitcoin Price Prediction')
 plt.xlabel('Time')
 plt.ylabel('Price')
 plt.legend()
 plt.show()
+
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+import numpy as np
+
+# Assuming y_true and y_pred are defined
+y_true = y_test  # Your actual values
+y_pred = test_predictions  # Your predicted values from the model
+
+# Calculate Mean Absolute Error
+mae = mean_absolute_error(y_true, y_pred)
+print("Mean Absolute Error (MAE):", mae)
+
+# Calculate Root Mean Square Error
+rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+print("Mean Squared Error (MSE):", mse)
+print("Root Mean Square Error (RMSE):", rmse)
 
 """Visualization of Model Predictions and Error Analysis"""
 
