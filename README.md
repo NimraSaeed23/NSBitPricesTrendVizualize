@@ -16,24 +16,35 @@ This dataset has Bitcoin's trading activity, meticulously detailing daily market
 8.	Market Cap: Bitcoin at the end of the day.
 
 To provide a comprehensive analysis of the Bitcoin historical prices and activity dataset, explore several aspects:
+
 •	Descriptive Statistics: Overview of the price movements and trading volumes.
+
 •	Trend Analysis: How Bitcoin prices have trended over the years.
+
 •	Volatility Analysis: Examination of daily price changes.
+
 •	Volume Analysis: Relationship between volume and price changes.
+
 •	Market Cap Analysis: Trends in market capitalization over time.
 
 **Tools and Libraries**
 
 •	TensorFlow or PyTorch: For constructing and training deep learning models.
+
 •	Pandas and NumPy: For data manipulation and numerical calculations.
+
 •	Matplotlib/Seaborn: For generating visualizations.
 
 **Step-by-Step Machine Learning Pipeline**
 
 • Data Preparation
+
 • Data Preprocessing
+
 • Model Development
+
 • Model Evaluation
+
 • Visualization
 
 ![image](https://github.com/NimraSaeed23/NSBitPricesTrendVizualize/assets/143579757/3653fd29-36e0-4264-b1e7-97c7ddd6e901)
